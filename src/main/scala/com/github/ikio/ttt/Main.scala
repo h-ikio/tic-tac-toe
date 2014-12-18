@@ -9,11 +9,11 @@ object Main extends App {
 	val DEFAULT_BOARD_SIZE = 3
 
 	val board =
-    if (args.size == 1) {
-      Board(args(0).toInt)
-    } else {
-      Board(DEFAULT_BOARD_SIZE)
-    }
+		if (args.size == 1) {
+			Board(args(0).toInt)
+		} else {
+			Board(DEFAULT_BOARD_SIZE)
+		}
 
 	println("Initialized.\n")
 
@@ -79,8 +79,8 @@ object Main extends App {
 
 		val move = acceptInput(state)
 
-    println("")
-    (move, Board.process(board, move))
+		println("")
+		(move, Board.process(board, move))
 	}
 
 	def judge(player: Player, board: Board, move: Move): Boolean = {
