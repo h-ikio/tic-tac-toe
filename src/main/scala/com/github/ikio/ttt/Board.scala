@@ -3,11 +3,11 @@ package com.github.ikio.ttt
 import scala.util.{Failure, Success, Try}
 
 object Board {
-  /**
-   * 盤面の初期化。
-   * @param size 正方形の盤面の一辺の長さ。
-   * @return 初期化した盤面。
-   */
+	/**
+	 * 盤面の初期化。
+	 * @param size 正方形の盤面の一辺の長さ。
+	 * @return 初期化した盤面。
+	 */
 	def apply(size: Int): Board = {
 		// サイズ(正方形盤面の一辺のマス数)は1を超える奇数のみ受け付ける。
 		require(size > 1)
@@ -30,16 +30,16 @@ object Board {
 		new Board(size, cells)
 	}
 
-  /**
-   * 各セルの初期値の指定を伴う盤面の初期化。
-   * @param cells 盤面のセルの集合。
-   * @return 盤面。
-   */
+	/**
+	 * 各セルの初期値の指定を伴う盤面の初期化。
+	 * @param cells 盤面のセルの集合。
+	 * @return 盤面。
+	 */
 	def apply(cells: Seq[Seq[Cell]]): Board = {
 		new Board(cells.size, cells)
 	}
 
-  // 勝敗判定。
+	// 勝敗判定。
 	private def judge(board: Board, move: Move, cmp: (Cell, Move) => Boolean): Boolean = {
 		board.cells.map {cs =>
 			cs.filter {c =>
