@@ -1,6 +1,6 @@
 package com.github.ikio.ttt
 
-import org.scalatest.{Matchers, FunSpec}
+import org.scalatest.{FunSpec, Matchers}
 
 import scala.annotation.tailrec
 
@@ -16,16 +16,16 @@ class BoardTest extends FunSpec with Matchers {
 		}
 	}
 
-  describe("A board") {
+	describe("A board") {
 
-    describe("when empty") {
-      it("should be judge to None") {
-        Board.judge(Board(3), Move(Position(0, 0), Black)) should be (None)
-      }
-    }
+		describe("when empty") {
+			it("should be judged to None") {
+				Board.judge(Board(3), Move(Position(0, 0), Black)) should be (None)
+			}
+		}
 
-		describe("when black place three respective marks in a horizontal") {
-			it("should be judge to BlackWin") {
+		describe("when black places three respective marks in a horizontal") {
+			it("should be judged to BlackWin") {
 				val moves =
 					Seq(
 						Move(Position(0, 0), Black),
@@ -47,8 +47,8 @@ class BoardTest extends FunSpec with Matchers {
 			}
 		}
 
-		describe("when white place three respective marks in a vertical") {
-			it("should be judge to WhiteWin") {
+		describe("when white places three respective marks in a vertical") {
+			it("should be judged to WhiteWin") {
 				val moves =
 					Seq(
 						Move(Position(1, 2), Black),
@@ -71,8 +71,8 @@ class BoardTest extends FunSpec with Matchers {
 			}
 		}
 
-		describe("when black place three respective marks in a diagonal(left upper to right lower)") {
-			it("should be judge to BlackWin") {
+		describe("when black places three respective marks in a diagonal(left upper to right lower)") {
+			it("should be judged to BlackWin") {
 				val moves =
 					Seq(
 						Move(Position(0, 0), Black),
@@ -94,8 +94,8 @@ class BoardTest extends FunSpec with Matchers {
 			}
 		}
 
-		describe("when white place three respective marks in a diagonal(right upper to left lower)") {
-			it("should be judge to WhiteWin") {
+		describe("when white places three respective marks in a diagonal(right upper to left lower)") {
+			it("should be judged to WhiteWin") {
 				val moves =
 					Seq(
 						Move(Position(0, 0), Black),
@@ -118,8 +118,8 @@ class BoardTest extends FunSpec with Matchers {
 			}
 		}
 
-		describe("when full and black and white do not place three respective marks in any line") {
-			it("should be judge to Draw") {
+		describe("when full and black and white do not places three respective marks in any line") {
+			it("should be judged to Draw") {
 				val moves =
 					Seq(
 						Move(Position(0, 0), Black),

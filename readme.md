@@ -10,9 +10,9 @@ JRE7 or higher.
 
 or
 
-    java -jar tic-tac-toe.jar [size-of-board]
+    java -jar tic-tac-toe.jar [size-of-the-board]
 
-Size of board must be an odd number(default: 3).
+The size of the board must be an odd number(default: 3).
 
 ## How to play
 
@@ -20,4 +20,4 @@ Input space-separated two values.
 
 The first is treated as x-coordinate and the second is treated as y-coordinate. 
 
-Origin(x-coordinate is 0 and y-coordinate is 0) is upper left.
+The origin(x-coordinate is 0 and y-coordinate is 0) is upper left.
