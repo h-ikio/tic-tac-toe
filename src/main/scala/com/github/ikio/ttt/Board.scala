@@ -41,11 +41,11 @@ object Board {
 
 	// 勝敗判定。
 	private def judge(board: Board, move: Move, cmp: (Cell, Move) => Boolean): Boolean = {
-		board.cells.map {cs =>
+		board.cells.flatMap {cs =>
 			cs.filter {c =>
 				cmp(c, move)
 			}
-		}.flatten.forall(c => c.state == move.state)
+		}.forall(c => c.state == move.state)
 	}
 
 	// Y軸方向の判定。
@@ -62,11 +62,11 @@ object Board {
 
 	// 斜め方向の判定。
 	private def judgeDiagonal(board: Board, move: Move, line: Seq[Position]): Boolean = {
-		board.cells.map {cs =>
+		board.cells.flatMap {cs =>
 			cs.filter {c =>
 				line.contains(c.pos)
 			}
-		}.flatten.forall(c => c.state == move.state)
+		}.forall(c => c.state == move.state)
 	}
 	def judgeDiagonal(board: Board, move: Move): Boolean = {
 		judgeDiagonal(board, move, board.diagonalLine1) || judgeDiagonal(board, move, board.diagonalLine2)
